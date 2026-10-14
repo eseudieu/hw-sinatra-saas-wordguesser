@@ -10,10 +10,9 @@ RUN gem install bundler -v "$BUNDLER_VERSION"
 WORKDIR /app
 
 # Set Rack/Sinatra to production environment
-ENV RACK_ENV="production" \
+ENV RACK_ENV="development" \
     BUNDLE_DEPLOYMENT="1" \
-    BUNDLE_PATH="/usr/local/bundle" \
-    BUNDLE_WITHOUT="development:test"
+    BUNDLE_PATH="/usr/local/bundle"
 
 # Throw-away build stage to reduce size of final image
 FROM base AS build
